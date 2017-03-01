@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get( '/form', 'FileController@index' )
+    ->name( 'file.form' );
+
+
+Route::any( '/file/uploader', 'FileController@fileUploader' )
+    ->name( 'file.uploader' );
